@@ -19,7 +19,9 @@ deg.classList.add('deg');
 document.body.prepend(mainContainer);
 // находим имя картинки в json
 let city = prompt('В каком городе смотрим погоду', 'Kharkiv');
-fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=5d066958a60d315387d9492393935c19`)
+let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=5d066958a60d315387d9492393935c19`;
+console.log(url);
+fetch(url)
     .then((response) => response.json())
     .then((data) => {
         let contTitle = document.createElement('h2');
